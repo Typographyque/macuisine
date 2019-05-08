@@ -1,0 +1,106 @@
+<h1>Tableau de bord</h1>
+
+<div class="col l4 m6 s12">
+    <div class="card">
+        <div class="card-content cyan darken-4 white-text">
+            <h2 class="card-title">Dernières recettes</h2>
+        </div>
+    </div>
+</div>
+
+<table class="striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Recette</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($recipes as $recipe): ?>
+        <tr>
+            <td><?= $recipe->id; ?></td>
+            <td><?= $recipe->title; ?></td>
+            <td><?= $recipe->post_date; ?></td>
+            <td>
+                <a href="?p=edit_recipe&id=<?= $recipe->id; ?>" class="btn-floating btn-small waves-effect waves-light green" ><i class="material-icons left">edit</i></a>
+
+                <form action="?p=delete_recipe" method="post" class="inline">
+
+                    <div class="switch inline">
+                        <label>
+                        <input type="checkbox" name="id" value="<?= $recipe->id; ?>" required/>
+                        <span class="lever"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-floating btn-small waves-effect waves-light red" href="?p=delete_recipe&id=<?= $recipe->id; ?>"><i class="material-icons">delete</i></button>
+                </form>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+<a class="btn light waves-effect waves-light" href="?p=add_recipe"><i class="material-icons left">add_circle</i>Nouvelle recette</a>
+<a class="btn light waves-effect waves-light" href="?p=recipes"><i class="material-icons left">view_list</i>Toutes les recettes</a>
+
+
+<div class="card_title">
+    <div class="card">
+        <div class="card-content cyan darken-4 white-text">
+            <h2 class="card-title">Commentaires non lus</h2>
+        </div>
+    </div>
+</div>
+
+
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Recette</th>
+            <th>Commentaire</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    if(!empty($comments)){
+        foreach ($comments as $comment): ?>
+            <tr id="commentaire_<?= $comment->id ?>">
+                <td><?= substr($comment->title, 0, 20); ?></td>
+                <td><?= substr($comment->comment, 0, 100); ?></td>
+                <td>
+                    <a href="#" id="<?= $comment->id ?>" class="btn-floating btn-small waves-effect waves-light green see_comment"><i class="material-icons">done</i></a>
+                    <a href="#" id="<?= $comment->id ?>" class="btn-floating btn-small waves-effect waves-light red delete_comment"><i class="material-icons">delete</i></a>
+                    <a href="#comment_<?= $comment->id ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
+
+                    <div class="modal" id="comment_<?= $comment->id ?>">
+                        <div class="modal-content">
+                            <h4><?= $comment->title?></h4>
+                            <p>Commentaire posté par <strong><?= $comment->name." (".$comment->email.")</strong><br>Le ".date("d/m/Y à H:i", strtotime($comment->date))?></p>
+                            <hr/>
+                            <p><?= nl2br($comment->comment); ?></p>
+
+                        </div>
+                        <div class="modal-footer grey darken-4">
+                            <a href="#" id="<?= $comment->id ?>" class="modal-action modal-close waves-effect waves-red btn-flatt delete_comment"><i class="material-icons">delete</i></a>
+                            <a href="#" id="<?= $comment->id ?>" class="modal-action modal-close waves-effect waves-green btn-flatt see_comment"><i class="material-icons">done</i></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach;
+    }else{
+    ?>
+        <tr>
+            <td></td>
+            <td>Aucun commentaire à valider</td>
+        </tr>
+    <?php
+    }
+    ?>
+    </tbody>
+</table>
+
+<a class="btn light waves-effect waves-light" href="?p=comments"><i class="material-icons left">view_list</i>Tous les commentaires</a>

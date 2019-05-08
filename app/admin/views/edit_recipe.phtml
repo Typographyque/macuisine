@@ -1,0 +1,82 @@
+    <div class=" col s12">
+        <h2>Modifier cette recette</h2>
+        <p>Publiée par <strong><?= $recipe->admin; ?></strong> le <span><?= date("d/m/Y à H:i", strtotime($recipe->post_date)) ?></span></p>
+    </div>
+
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $recipe->id ?>">
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" name="title" id="title" value="<?= $recipe->title ?>">
+                <label for="title">Titre de la recette</label>
+            </div>
+
+            <div class="input-field col s12">
+                <p>Ingrédients</p>
+                <textarea name="ingredients" id="ingredients" class="materialize-textarea editor"><?= $recipe->ingredients ?></textarea>
+                <label for="ingredients"></label>
+            </div>
+
+            <div class="input-field col s12">
+                <p>Description</p>
+                <textarea name="description" id="description" class="materialize-textarea editor"><?= $recipe->description ?></textarea>
+                <label for="description"></label>
+            </div>
+
+            <div class="row">
+                <div class=" col s2">
+                    <img src="img/recipes/<?= $recipe->picture; ?>" class="z-depth-2 materialboxed responsive-img" alt="<?= $recipe->title; ?>">
+                </div>
+
+                <div class="col s10">
+                <div class="file-field input-field">
+                    <div class="btn col s2">
+                        <span>Image</span>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                        <input type="file" name="picture" value="<?= $recipe->picture ?>" accept="image/png, image/jpeg, image/jpg, image/gif, image/PNG, image/JPG, image/JPEG, image/GIF "/>
+                    </div>
+                    <input type="text" name="picture" class="file-path validate" value="<?= $recipe->picture ?>" placeholder="Veuillez choisir une image au format png, jpg, jpeg ou gif | Taille maximale 2 Mo"/>
+                </div>
+                <?php if (!empty($error)): ?>
+                    <div class="card red">
+                        <div class="card-content white-text center">
+                            <p><?php echo $error; ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+            </div>
+
+            <div class="input-field col s6">
+                <select name="category_id">
+                    <option value="<?= $recipe->category_id; ?>" selected><?= $recipe->categorie; ?></option>
+                    <?php foreach ($categories as $category): ?>
+                        <option value="<?= $category->id; ?>"><?= $category->category_name; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="col s6 right-align">
+                <p><i class="material-icons">visibility_off</i><i class="material-icons right">visibility</i>   Public</p>
+                <div class="switch">
+                    <label>
+                        Non
+                        <input type="checkbox" name="public" <?php echo ($recipe->posted == "1")?"checked" : ""; ?>/>
+                        <span class="lever"></span>
+                        Oui
+                    </label>
+                </div>
+            </div>
+
+            <div class="row center">
+                <br><br><br><br><br><br>
+                <button class="btn s4" type="submit" name="updateRecipe">Enregistrer</button>
+            </div>
+        </div>
+    </form>
+
+<div class="row center">
+    <a href="?p=recipes" class="btn grey darken-4 waves-effect waves-light">Anuler</a>
+</div>
+

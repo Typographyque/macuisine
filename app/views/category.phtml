@@ -1,0 +1,24 @@
+<section id="category" class="container">
+    <h1><?= $category->category_name;?></h1>
+
+    <section class="cards">
+        <?php foreach ($recipes as $recipe): ?>
+
+
+            <a href="?p=recipe&id=<?= $recipe->id; ?>" >
+                <article class="card">
+                    <img src="img/recipes/<?= $recipe->picture ?>" alt="<?= $recipe->title ?>">
+                    <div class="text">
+                        <h3><?= $recipe->title ?></h3>
+                        <p><?= substr($recipe->description, 0, 200); ?><span> - [...]</span></p>
+                    </div>
+                </article>
+            </a>
+
+
+        <?php endforeach; ?>
+    </section>
+</section>
+
+
+

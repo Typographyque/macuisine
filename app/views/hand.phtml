@@ -1,0 +1,46 @@
+<section class="container">
+
+    <h2>Sur le pouce</h2>
+
+        <section class="cards">
+
+            <!--Burgers-->
+
+            <?php foreach ($burgers as $burger): ?>
+                <a href="?p=recipe&id=<?= $burger->id; ?>" ><article class="card">
+                        <img src="img/recipes/<?= $burger->picture ?>" alt="<?= $burger->title ?>">
+                        <div class="text">
+                            <h3><?= $burger->title ?></h3>
+                            <p><?= substr($burger->description, 0, 200); ?><span> - [...]</span></p>
+                        </div>
+                    </article></a>
+            <?php endforeach; ?>
+
+            <!--Pizzas-->
+
+            <?php foreach ($pizzas as $pizza): ?>
+                <a href="?p=recipe&id=<?= $pizza->id; ?>" ><article class="card">
+                        <img src="img/recipes/<?= $pizza->picture ?>" alt="<?= $pizza->title ?>">
+                        <div class="text">
+                            <h3><?= $pizza->title ?></h3>
+                        <p><?= substr($pizza->description, 0, 200); ?><span> - [...]</span></p>
+                        </div>
+                    </article></a>
+            <?php endforeach; ?>
+
+            <!--Sandwichs-->
+
+            <?php foreach ($sandwhichs as $sandwhich): ?>
+                <a href="?p=recipe&id=<?= $sandwhich->id; ?>" ><article class="card">
+                        <img src="img/recipes/<?= $sandwhich->picture ?>" alt="<?= $sandwhich->title ?>">
+                        <div class="text">
+                            <h3><?= $sandwhich->title ?></h3>
+                        <p><?= substr($sandwhich->description, 0, 200); ?><span> - [...]</span></p>
+                        </div>
+                    </article></a>
+            <?php endforeach; ?>
+
+
+        </section>
+
+</section>

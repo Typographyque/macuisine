@@ -1,0 +1,77 @@
+<h2>Paramètres</h2>
+
+<div class="row">
+    <div class="col l12 m12 s12">
+        <h3>Modérateurs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Validé</th>
+                        <th>Suprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($admins as $admin): ?>
+                    <tr>
+                        <td><?= $admin->admin_name; ?></td>
+                        <td><?= $admin->email; ?></td>
+                        <td><?= $admin->role; ?></td>
+                        <td><i class="material-icons"><?php echo (!empty($admin->password)) ? "verified_user" : "av_timer" ?></i></td>
+                        <td>
+                            <form action="?p=delete_admin" method="post" class="inline">
+
+                                <div class="switch inline">
+                                    <label>
+                                    <input type="checkbox" name="id" value="<?= $admin->id; ?>" required/>
+                                    <span class="lever"></span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn-floating btn-small waves-effect waves-light red" href="?p=delete_admin&id=<?= $admin->id; ?>"><i class="material-icons">delete</i></button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+    </div>
+    <div class="col l6 m12 s12">
+        <h3>Ajouter un modérateur</h3>
+        <?php if (!empty($errors)): ?>
+            <div class="card red">
+                <div class="card-content white-text center">
+                    <?php foreach ($errors as $error) echo "<p>".$error."</p>"; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <form method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="name" id="name"/>
+                    <label for="name">Nom</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="email" name="email" id="email"/>
+                    <label for="email">Adresse email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="email" name="email_again" id="email_again"/>
+                    <label for="email_again">Répéter l'adresse email</label>
+                </div>
+                <div class="input-field col s12">
+                    <select name="role">
+                        <option value="moderator">Modérateur</option>
+                        <option value="administrator">Administrateur</option>
+                    </select>
+                    <label for="role">Rôle</label>
+                </div>
+
+                <div class="col s12">
+                    <button type="submit" name="submit" class="btn">Ajouter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

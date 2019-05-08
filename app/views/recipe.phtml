@@ -1,0 +1,40 @@
+<section class="container">
+    <article class="recipe">
+        <div class="intro">
+            <h1><?= $recipe->title; ?></h1>
+            <div class="parallax_recipe" style="<?='background-image:url(img/recipes/'.$recipe->picture; ?>)">
+            </div>
+            <h2>Ingrédients</h2>
+            <p><?=$recipe->ingredients; ?></p>
+        </div>
+
+        <p id="description"><?=$recipe->description; ?></p>
+        <img src="img/recipes/<?= $recipe->picture; ?>" alt="<?= $recipe->title; ?>">
+    </article>
+
+    <section class="comments">
+        <h4>Commentaires</h4>
+
+        <?php foreach ($comments as $comment): ?>
+            <p><strong><?= $comment->name; ?> </strong><span>(<?= date("d/m/Y", strtotime($comment->date)); ?>) : </span></p>
+            <p><?= $comment->comment; ?></p>
+        <?php endforeach; ?>
+
+
+        <form method="post">
+                <input type="text" name="name" id="form_name" placeholder="Nom" required>
+                <div class="error-message"><p></p></div>
+                <input type="email" name="email" id="form_email" placeholder="Adresse email" required>
+                <div class="error-message"><p></p></div>
+                <textarea name="comment" id="form_comment" placeholder="Commentaire" required></textarea>
+                <div class="error-message"><p></p></div>
+                <br>
+                <button type="submit" name="submit" id="form_submit">Publier</button>
+        </form>
+    </section>
+
+
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="../public/js/form.js"></script>

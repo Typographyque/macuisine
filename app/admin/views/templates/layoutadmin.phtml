@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?= App::getTitle()?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Appels CSS -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../public/css/materialize.min.css"  media="screen,projection"/>
+
+    <script src="../public/js/tinymce/tinymce.min.js"></script>
+
+    <link href="../public/css/admin.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+<header>
+    <?php
+    if(isset($_SESSION['admin'])){
+        include ROOT."/app/admin/views/templates/nav.phtml";
+    };?>
+</header>
+
+<main class="container">
+    <!-- inclusion du template -->
+    <?php include ROOT."/app/admin/views/$page.phtml"; ?>
+    <!-- fin du template -->
+</main>
+
+<footer class="page-footer blue-grey darken-4">
+<div class="container">
+    <h5 class="white-text"></h5>
+    <p class="grey-text text-lighten-4 center">Travail pratique final pour la formation de Développeur web de la 3W Academy.</p>
+</div>
+<div class="footer-copyright">
+    <div class="container">
+    © 2018 Normando Gil
+    <a class="grey-text text-lighten-4 right" href="#!">Link</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../public/js/materialize.min.js"></script>
+
+<script type="text/javascript" src="../public/js/script_admin.js"></script>
+
+<script type="text/javascript" src="../public/js/ajax.js"></script>
+
+
+</body>
+</html>

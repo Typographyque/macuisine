@@ -1,0 +1,637 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 180%;
+}
+
+h1, h2, h3, h4 {
+    font-family: Quattrocento, serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    line-height: 150%;
+}
+
+nav {
+    font-family: Quattrocento, serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+}
+
+main{
+    padding-top: 8rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2c2D2f;
+    font-weight: lighter;
+}
+
+a:hover, a:focus{
+    opacity: 0.5;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+section{
+    padding-top: 6rem;
+}
+
+article {
+    width: 90%;
+    margin: auto;
+}
+article p {
+    text-align: justify;
+}
+
+#contents h2 span{
+    background-color:white;
+    display: inline-block;
+    padding: 1rem 1rem;
+}
+
+#contents h2:after{
+    content: '';
+    display:block;
+    border-bottom: 2px solid #ccc;
+    margin-top: -3rem;
+    margin-bottom: 5rem;
+}
+
+/*--------------------------------------*/
+/*_______________FORM___________________*/
+
+form input{
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    height: 3rem;
+    outline: none;
+    padding: 0px 5px 0px 15px;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+
+    color: #444;
+    width: 75%;
+
+    transition: 0.5s;
+}
+
+form input:focus{
+    width: 95%;
+    color: #000;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+form textarea{
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    height: 20rem;
+    outline: none;
+    padding: 0px 5px 0px 15px;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+
+    color: #444;
+    width: 75%;
+
+    transition: 0.5s;
+}
+
+form textarea:focus{
+    width: 95%;
+    color: #000;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+form button{
+    display: block;
+    margin: auto;
+    border-radius: 2rem;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 0 2rem 0 ;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+    color: #444;
+}
+
+
+/*--------------------------------------*/
+/*_______________ CLASS _______________*/
+
+.container{
+    text-align: center;
+    background-color: #FFF;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 4rem 1rem 10rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.social_button{
+    background-color: #ffffff00;
+    border: 0;
+}
+
+.error-message{
+    padding: 0 0 0 3rem;
+    color: darkred;
+    display: none;
+}
+
+.hide{
+    display: none;
+}
+
+
+/*--------------------------------------*/
+/*_______________ HEADER _______________*/
+
+header {
+    background-color: #1a1a1a;
+    border-bottom: solid 2px #ffffff88;
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+header nav{
+    max-width: 120rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    Align-items: center;
+}
+
+#icon_burger{
+    display: none;
+}
+
+nav a{
+    color: #fff;
+    padding-right: 3rem;
+}
+
+#iso {
+    align-self: flex-start;
+    padding: 1rem 1rem ;
+}
+
+.full{
+    height: 10rem;
+    transition: .8s;
+}
+
+.full img {
+    height: 7rem;
+    transition: .8s;
+}
+
+.shrink{
+    height: 6rem;
+    transition: .8s;
+}
+
+.shrink img {
+    height: 4rem;
+    transition: .8s;
+}
+
+
+
+/*--------------------------------------*/
+/*____________SECTION WELCOME___________*/
+
+#welcome {
+        background: url("../img/header.jpg") no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.welcome_content {
+    text-align: center;
+    position:fixed;
+    right:0;
+    left:0;
+    top:33%;
+    z-index:1;
+}
+
+#welcome img{
+    margin-right: .5rem;
+    margin-left: .5rem;
+    max-width: 90%;
+}
+
+#welcome .social_button{
+    margin-top: 10rem
+}
+
+.scroll_down{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10rem;
+}
+
+
+/*--------------------------------------*/
+/*______________FORM SEARCH_____________*/
+
+.form_searcher{
+    border: none;
+    text-align: center;
+    margin: auto;
+}
+
+.form_searcher input{
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    height: 2rem;
+    outline: none;
+    padding: 0px 5px 0px 25px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAQAAABedl5ZAAAAzklEQVQYlWNgAIP%2F9v%2FrwVCfARn85%2F%2B%2F%2Fz8CzEeS%2BnMQJPL0%2Ba37796DJfsZ4EYBwar9DBkMCQwFR86DJeXBUo%2F6QToYHCAKtaO%2Bf%2F%2F%2F%2F3kmmHNm%2Fv%2F%2FD27CTee4c%2Ff%2F%2F2vT4VKfXiM5CQg2t4M5lckQd%2F3nB0n8vQji5HhCFEpArP73AeGF35dACkEgYPtxmODXnxueg2igbqikh3l%2F1%2FpV%2B7vWyzUwxHatB%2BvcBLNfgMEA6AEDBg4g26Br%2FffvqeUMWIEBULcEdikGkG4AzGOfgUQC7TUAAAAASUVORK5CYII%3D') #ffffff80 no-repeat 1rem center;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+
+    color: #FFF;
+    text-shadow: 0px 1px 0px #2c2D2f;
+    width: 20rem;
+
+    transition: 0.5s;
+}
+
+.form_searcher input:focus{
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6%2BR8AAAAlElEQVR42oWQQRHEIAxF10ElVAISVgo3bCABCUhYCZWAhEpAQpoD6bzJhNnDO0DyyA8fEXkppXyVCpLViDUfyqVIQN9JFMY637hrlCySFauL21E7KVWbAIGx56rnSLqc5KPXSLo3kySalPhTygFhRDtFC09EIsMeZJSGBj7Qveh3OJW89syImiH%2BIO2BOJX0XwA2%2BQEL4pAhSX4aBQAAAABJRU5ErkJggg%3D%3D') no-repeat 7px center #FFF;
+    width: 300px;
+    color: #000;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+.form_searcher button{
+    height: 2.5rem;
+    background-color: #ffffff80;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: lighter;
+    text-transform: uppercase;
+
+}
+
+/*-------------------------------------------*/
+/*_______________ PAGE SEARCH _______________*/
+
+#search {
+    background-color: #1a1a1a;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+
+/*-------------------------------------------*/
+/*_______________ SECTION LAST _______________*/
+
+
+.slider{
+    width: 100%;
+    height: 30rem;
+    margin: 0 auto 4rem;
+    overflow: hidden;
+}
+
+.slides{
+    width: calc(35rem * 10);
+    animation: slide 50s infinite alternate;
+}
+
+.slide {
+    overflow: hidden;
+    background-size: cover;
+    -webkit-border-radius:15rem;
+    -moz-border-radius:15rem;
+    border-radius:15rem;
+    width:30rem;
+    height:30rem;
+    margin-right: 5rem;
+    float: left;
+}
+
+.slide img {
+    opacity: 0;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-28rem);
+    }
+    20%{
+        transform: translateX(-56rem);
+    }
+    30%{
+        transform: translateX(-84rem);
+    }
+    40%{
+        transform: translateX(-112rem);
+    }
+    50%{
+        transform: translateX(-140rem);
+    }
+    60%{
+        transform: translateX(-168rem);
+    }
+    70%{
+        transform: translateX(-196rem);
+    }
+    80%{
+        transform: translateX(-224rem);
+    }
+    90%{
+        transform: translateX(-252rem);
+    }
+}
+
+
+/*---------------------------------------------*/
+/*_______________ SECTION SLATE _______________*/
+
+#slate figure{
+    width: 100%;
+    min-height: 17rem;
+    background-color: #1a1a1a;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 1px rgba(26,26,26,.5);
+}
+
+#slate figure a:hover{
+    opacity: 1;
+}
+
+#slate figcaption{
+    position: absolute;
+    left: 0; bottom: -2rem;
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background: #1a1a1a66;
+    overflow: hidden;
+    transition: all 0.7s;
+}
+
+#slate figure:hover figcaption, #slate figure:focus figcaption{
+    height: 50%;
+    background: #1a1a1add;
+}
+
+
+/*---------------------------------------------*/
+/*_______________ SECTION CARTE _______________*/
+
+
+
+
+/*--------------------------------------------*/
+/*_______________ SECTION HAND _______________*/
+
+#hand > div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 100%;
+}
+
+#hand figure{
+    width: 45%;
+    margin: 0.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 1px rgba(26,26,26,.5);
+}
+
+#hand figure a:hover{
+    opacity: 1;
+}
+
+#hand figcaption{
+    position: absolute;
+    left: 0; bottom: -2rem;
+    width: 100%;
+    height: 6rem;
+    padding: 0 .1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background: #1a1a1a66;
+    overflow: hidden;
+    transition: all 0.7s;
+}
+
+#hand figure:hover figcaption, #hand figure:focus figcaption{
+    height: 100%;
+    background: #1a1a1add;
+}
+
+
+
+/*--------------------------------------------*/
+/*______________ GRILLE RECETTES _____________*/
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-auto-flow: row dense;
+    counter-reset: grid;
+}
+
+.grid_recipe {
+    cursor: pointer;
+    margin-bottom: 3rem;
+}
+
+.grid_recipe h2 {
+    padding: 0;
+    margin: 0 0 .5rem;
+}
+
+.grid_image {
+    width: 100%;
+    height: 30rem ;
+    overflow: hidden;
+    background-size: cover;
+    margin-right: 5rem;
+    float: left;
+}
+
+.grid_recipe .grid_body {
+    display: none;
+}
+
+.grid_body {
+    grid-column: span 4;
+    overflow: hidden;
+    //color: #626262;
+    //background-color: #1a1a1a;
+}
+
+
+/*-----------------------------------------*/
+/*______________ PAGE RECETTE _____________*/
+
+.recipe p{
+    padding: 0 1rem;
+}
+
+.recipe img{
+    border: solid #262626 4rem;
+    margin-top: 4rem;
+}
+
+.intro {
+    background-color: #262626;
+    color: #accdee;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    margin-top: -5rem;
+}
+
+.intro p {
+    text-align: center;
+}
+
+
+.description p{
+    background-color: #fff;
+    color: #262626;
+}
+
+.parallax_recipe{
+    background: center fixed no-repeat;
+    background-size: 100%;
+    height: 20rem;
+}
+
+/*--------------------------------------*/
+/*_______________ FOOTER _______________*/
+
+footer{
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer nav {
+    margin-top: 5rem;
+}
+
+
+/*--------------------------------------------*/
+/*___________________ CARDS ___________________*/
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 30rem;
+    height: 75rem;
+    flex-shrink: 0;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px 0px  rgba(0,0,0,0.3);
+}
+.card img{
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+
+}
+.card .text {
+    padding: 0 1.5rem 1.5rem;
+}
+.card .text > button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/*------------------------------------*/
+/*_____________ PAGE 404______________*/
+
+.not_found{
+    background: url("../img/404.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.not_found article {
+    text-align: center;
+    font-size: 110%;
+    background-color: #1a1a1a66;
+    width: 100%;
+    color: #ccc;
+    padding-bottom: 2rem;
+}
+
+.not_found article p {
+    text-align: center;
+}
+
+.not_found div{
+    line-height: 100%;
+}
+
+

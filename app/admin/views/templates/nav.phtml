@@ -1,0 +1,30 @@
+<nav class="blue-grey darken-4">
+    <div class="container">
+        <div class="nav-wrapper">
+
+            <a href="#!" class="brand-logo">Ma cuisine</a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+
+            <ul class="right hide-on-med-and-down">
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=admin" title="Tableau de bord"><i class="material-icons left">dashboard</i></a></li>
+                <li><a href="index.php?p=home" title="Home" target="_blank"><i class="material-icons left">home</i></a></li>
+
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=add_recipe" title="Nouvelle recette"><i class="material-icons left">edit</i></a></li>
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=recipes" title="Toutes les recettes"><i class="material-icons left">view_list</i></a></li>
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=settings" title="Paramètres"><i class="material-icons left">settings</i></a></li>
+
+                <li><a href="admin.php?p=logout" title="Déconnexion"><i class="material-icons left">directions_run</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+            <ul class="sidenav" id="mobile-demo">
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=admin"><i class="material-icons left">dashboard</i>Tableau de bord</a></li>
+                <li><a href="index.php?p=home" target="_blank"><i class="material-icons left">home</i>Home</a></li>
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=add_recipe"><i class="material-icons left">edit</i>Nouvelle recette</a></li>
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=recipes"><i class="material-icons left">view_list</i>Toutes les recettes</a></li>
+                <li class="<?php echo ($page=='admin')?'activeContent' : ''; ?>"><a href="admin.php?p=settings"><i class="material-icons left">settings</i>Paramètres</a></li>
+                <li><a href="admin.php?p=logout"><i class="material-icons left">directions_run</i>Déconnexion</a></li>
+            </ul>

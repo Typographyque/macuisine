@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?= App::getTitle()?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Appels CSS -->
+    <link href="../public/css/normalize-3.0.3.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative|Open+Sans|Lora|Quattrocento" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../public/css/style.css" rel="stylesheet">
+    <link href="../public/css/mobil.css" rel="stylesheet">
+
+
+
+</head>
+<body class="flow-text">
+<header id="header" class="full">
+    <nav>
+        <a id="iso" href="../public/index.php?p=home" title="Ma Cuisine"><img  src="img/macuisine_iso.svg" alt="Ma Cuisine"></a>
+        <menu id="main_menu">
+            <a href="../public/index.php?p=home" title="Page d'accueil">Accueil</a>
+            <a href="../public/index.php?p=allrecipes" title="Toutes nos recettes">Recettes</a>
+            <a href="../public/index.php?p=contact" title="Écrivez-nous">Contact</a>
+        </menu>
+        <a href="#" id="icon_burger"></a>
+    </nav>
+</header>
+
+<main>
+    <!-- inclusion du template -->
+    <?php include ROOT."/app/views/$page.phtml"; ?>
+    <!-- fin du template -->
+</main>
+
+
+<footer>
+    <!-- inclusion du footer -->
+    <?php include ROOT."/app/views/templates/footer.phtml"; ?>
+    <!-- fin du footer -->
+</footer>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../public/js/script.js"></script>
+<script type="text/javascript" src="../public/js/social.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<h2>Toutes les recettes</h2>
+<hr>
+
+<?php foreach ($recipes as $recipe): ?>
+<div class="row">
+    <div class="col s12">
+        <h3><?= $recipe->title. " | "; ?><?php echo ($recipe->posted == "0") ? "<i class='material-icons'>visibility_off</i>" : "<i class='material-icons'>visibility</i>"; ?></h3>
+
+        <div class="row">
+            <div class="col s12 m6 l8">
+                <p><?= substr(nl2br($recipe->description),0,500);?><span> - [...]</span></p>
+                <a class="btn light waves-effect waves-light" href="admin.php?p=edit_recipe&id=<?= $recipe->id; ?>"><i class='material-icons'>edit</i> Editer la recette</a>
+                <form action="?p=delete_recipe" method="post" class="inline">
+
+                    <div class="switch inline">
+                        <label>
+                        <input type="checkbox" name="id" value="<?= $recipe->id; ?>" required/>
+                        <span class="lever"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-floating btn-small waves-effect waves-light red" href="?p=delete_recipe&id=<?= $recipe->id; ?>"><i class="material-icons">delete</i></button>
+                </form>
+            </div>
+            <div class="col s12 m6 l4">
+                <img src="img/recipes/<?= $recipe->picture; ?>" class="z-depth-2 materialboxed responsive-img" alt="<?= $recipe->title; ?>">
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>

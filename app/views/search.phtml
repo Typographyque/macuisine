@@ -1,0 +1,29 @@
+
+<section id="search">
+    <h1><img src="img/macuisine_logo.svg" alt="Ma Cuisine" title="Ma cuisine, mes recettes préférées"></h1>
+    <form class="form_searcher" method="post">
+        <input type="search" name="search" placeholder="">
+        <button type="submit" name="submit" value="search">Rechercher</button>
+    </form>
+</section>
+
+<div class="container">
+    <h2>Résultats</h2>
+    <section id="results" class="cards">
+        <?php if (!empty($results)):
+            foreach ($results as $result) : ?>
+            <a href="?p=recipe&id=<?= $result->id; ?>" >
+                <article class="card">
+                    <img src="img/recipes/<?= $result->picture ?>" alt="<?= $result->title ?>">
+                    <div class="text">
+                        <h3><?= $result->title; ?></h3>
+                        <p><?= substr($result->description, 0, 200); ?><span> - [...]</span></p>
+                    </div>
+                </article>
+            </a>
+
+        <?php endforeach;
+        endif; ?>
+    </section>
+</div>
+

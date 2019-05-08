@@ -1,0 +1,25 @@
+<?php use App\Models\Category;
+
+$categoryModel = new Category();
+
+$categories = $categoryModel->getAll(); ?>
+
+<div>
+    <button class="social_button share_facebook" data-url="">
+        <img src="img/icons/facebook.svg">
+    </button>
+    <button class="social_button share_twitter" data-url="">
+        <img src="img/icons/twitter.svg">
+    </button>
+    <button class="social_button share_gplus" data-url="">
+        <img src="img/icons/gplus.svg">
+    </button>
+</div>
+
+<nav>
+<?php foreach ($categories as $category): ?>
+
+    <a href="index.php?p=category&id=<?= $category->id; ?>"><?= $category->category_name; ?></a>
+
+<?php endforeach; ?>
+</nav>

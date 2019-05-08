@@ -1,0 +1,55 @@
+<div class="card_title">
+    <div class="card">
+        <div class="card-content cyan darken-4 white-text">
+            <h1 class="card-title">Tous les commentaires</h1>
+        </div>
+    </div>
+</div>
+
+
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Recette</th>
+            <th>Commentaire</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php
+if(!empty($comments)){
+    foreach ($comments as $comment): ?>
+        <tr id="commentaire_<?= $comment->id ?>">
+            <td><?= substr($comment->title, 0, 20); ?></td>
+            <td><?= substr($comment->comment, 0, 100); ?></td>
+            <td>
+                <a href="#" id="<?= $comment->id ?>" class="btn-floating btn-small waves-effect waves-light red delete_comment"><i class="material-icons">delete</i></a>
+                <a href="#comment_<?= $comment->id ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
+
+                <div class="modal" id="comment_<?= $comment->id ?>">
+                    <div class="modal-content">
+                        <h4><?= $comment->title?> | <a title="éditer la recette" href="?p=edit_recipe&id=<?= $comment->recipe_id; ?>" class="modal-action modal-close btn-flatt"><i class="material-icons">edit</i></a></h4>
+                        <p>Commentaire posté par <strong><?= $comment->name." (".$comment->email.")</strong><br>Le ".date("d/m/Y à H:i", strtotime($comment->date))?></p>
+                        <hr/>
+                        <p><?= nl2br($comment->comment); ?></p>
+
+                    </div>
+                    <div class="modal-footer grey darken-4">
+
+                        <a title="Suprimer le commentaire" href="#" id="<?= $comment->id ?>" class="modal-action modal-close btn-flatt delete_comment"><i class="material-icons">delete</i></a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+<?php endforeach;
+}else{
+?>
+<tr>
+    <td></td>
+    <td>Aucun commentaire à valider</td>
+</tr>
+<?php
+}
+?>
+</tbody>
+</table>

@@ -1,0 +1,97 @@
+<section id="welcome">
+    <div class="welcome_content">
+        <h1><img src="img/macuisine_logo.svg" alt="Ma Cuisine" title="Ma cuisine, mes recettes préférées"></h1>
+        <form class="form_searcher" method="post" action="index.php?p=search">
+            <input type="search" name="search" placeholder="">
+            <button type="submit" name="submit" value="search">Rechercher</button>
+
+        </form>
+        <div>
+            <button class="social_button share_facebook" data-url="">
+                <img src="img/icons/facebook.svg">
+            </button>
+            <button class="social_button share_twitter" data-url="">
+                <img src="img/icons/twitter.svg">
+            </button>
+            <button class="social_button share_gplus" data-url="">
+                <img src="img/icons/gplus.svg">
+            </button>
+        </div>
+    </div>
+    <div class="scroll_down">
+        <a href="#contents"><img src="img/icons/scrolldown.svg"></a>
+    </div>
+</section>
+
+<div id="contents" class="container">
+
+    <section id="last">
+        <h2><span>Nos dernières recettes</span></h2>
+        <div class="slider">
+            <div class="slides">
+                <?php foreach ($recipes as $recipe): ?>
+                <?= '<div class="slide" style="background-image:url(\'img/recipes/'.$recipe->picture.'\')">'; ?>
+                    <a href="index.php?p=recipe&id=<?= $recipe->id; ?>" title="<?= $recipe->title; ?>"><img src="img/recipes/<?= $recipe->picture; ?>" alt="<?= $recipe->title; ?>">
+                    </a>
+                <?= '</div>' ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="slate">
+        <h2><span>Sur l'ardoise</span></h2>
+            <figure>
+                <a href="index.php?p=slate"><img src="img/slate.jpg" alt="Hamburgers"></a>
+                <a href="index.php?p=slate"><figcaption><h3>Cuisine argentine</h3>Terre de contrastes et de nature, l’Argentine est aussi un pays où l’on se fait plaisir en mangeant. Entre pâtes, empanadas, vins et beaucoup de viande, découvrez la cuisine argentine.</figcaption></a>
+            </figure>
+    </section>
+
+    <section id="carte">
+        <h2><span>Sur la carte</span></h2>
+        <ul class="flex">
+            <li>
+                <a href="index.php?p=category&id=2"><img src="img/entrees.png" alt="entrees"></a>
+            </li>
+            <li>
+                <a href="index.php?p=category&id=3"><img src="img/plats.png" alt="plats"></a>
+            </li>
+            <li>
+                <a href="index.php?p=category&id=4"><img src="img/desserts.png" alt="desserts"></a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="hand" class="flex">
+        <div>
+            <article>
+                <h2><span>Sur le pouce</span></h2>
+                <p>Pour déjeuner sur le canapé ou dans le jardin, ou pour recevoir nos amis dans la convivialité et la gourmandise, on range les fourchettes et on se lave le mains. Parce que, même si on n’est pas pressé, on adore manger comme ça… </p>
+            </article>
+        </div>
+
+        <div>
+            <figure>
+                <a href="index.php?p=category&id=5"><img src="img/hamburger.jpg" alt="Hamburgers"></a>
+                <a href="index.php?p=category&id=5"><figcaption><h3>Hamburgers</h3>De bœuf, d’agneau, de poisson, de légumes… choisissez la votre.</figcaption></a>
+            </figure>
+            <figure>
+                <a href="index.php?p=category&id=6"><img src="img/pizza.jpg" alt="Pizzas"></a>
+                <a href="index.php?p=category&id=6"><figcaption><h3>Pizzas</h3>Comme en Italie, comme en France, comme en Amérique, comme chez vous…</figcaption></a>
+            </figure>
+            <figure>
+                <a href="index.php?p=category&id=7"><img src="img/sandwich.jpg" alt="Sandwichs"></a></a>
+                <a href="index.php?p=category&id=7"><figcaption><h3>Sandwichs</h3>Simples ou sophistiqués, le plus universel de plaisirs gourmands.</figcaption></a>
+            </figure>
+            <figure>
+                <a href="index.php?p=hand"><img src="img/hand_plus.jpg" alt="Beaucoup plus"></a>
+                <a href="index.php?p=hand"><figcaption><h3>Beaucoup plus</h3><i class="fa fa-plus"></i></figcaption></a>
+            </figure>
+
+        </div>
+    </section>
+
+</div>
+
+
+
